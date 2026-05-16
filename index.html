@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Security Command Center | Syed Sakib Alam Mubin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Boot sequence overlay (shown first for ~3 seconds) -->
+  <section id="boot-sequence" aria-live="polite">
+    <div class="boot-frame">
+      <h2 class="boot-title">S4M_OS SECURITY BOOT CONSOLE</h2>
+      <pre id="boot-log"></pre>
+    </div>
+  </section>
+
+  <main id="dashboard" class="hidden">
+    <div class="layout">
+      <!-- Left: interactive terminal -->
+      <section class="panel terminal-panel">
+        <header class="panel-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <p>secure-shell://mubin@soc-core</p>
+        </header>
+
+        <div id="terminal-output" class="terminal-output"></div>
+
+        <form id="terminal-form" class="terminal-input-wrap" autocomplete="off">
+          <label for="terminal-input" class="prompt">mubin@soc:~$</label>
+          <input
+            id="terminal-input"
+            type="text"
+            spellcheck="false"
+            aria-label="Terminal command input"
+            placeholder="type 'help' and press enter..."
+          />
+        </form>
+      </section>
+
+      <!-- Right: HUD data and modules -->
+      <section class="panel hud-panel">
+        <div class="hud-card identity-module">
+          <p class="module-label">IDENTITY MODULE</p>
+          <div class="identity-top">
+            <div class="avatar-shell">
+              <img src="assets/p.png" alt="Profile of Syed Sakib Alam Mubin" />
+              <span class="avatar-tag">FACULTY NODE</span>
+            </div>
+            <div class="identity-copy">
+              <h1 class="glitch-hover" data-text="Syed Sakib Alam Mubin">
+                Syed Sakib Alam Mubin
+              </h1>
+              <p id="typed-title" class="typed-title"></p>
+              <p class="title-badge">Faculty Member, Arena Web Security</p>
+            </div>
+          </div>
+          <p class="bio">
+            Specializing in offensive security, secure architecture, and Python
+            automation. Mentoring the next generation of ethical hackers.
+          </p>
+          <div class="lab-shortcuts">
+            <a
+              href="https://s4mc71.github.io/LFI-Simulator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lab-link"
+            >
+              Open LFI Class Demo
+            </a>
+            <a
+              href="https://s4mc71.github.io/interactive-xss-simulator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lab-link"
+            >
+              Open XSS Class Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="hud-card skills-module">
+          <p class="module-label">CAPABILITY MATRIX</p>
+          <div class="skill-row">
+            <span>Penetration Testing</span>
+            <div class="skill-bar"><span class="skill-fill" data-level="94%"></span></div>
+          </div>
+          <div class="skill-row">
+            <span>Secure Architecture</span>
+            <div class="skill-bar"><span class="skill-fill" data-level="89%"></span></div>
+          </div>
+          <div class="skill-row">
+            <span>Python Automation</span>
+            <div class="skill-bar"><span class="skill-fill" data-level="96%"></span></div>
+          </div>
+          <div class="skill-row">
+            <span>Web App Security</span>
+            <div class="skill-bar"><span class="skill-fill" data-level="91%"></span></div>
+          </div>
+        </div>
+
+        <div class="hud-card simulation-decks">
+          <p class="module-label warning">STUDENT CYBER LAB DEMOS</p>
+          <p class="module-note">
+            Built for classroom walkthroughs to help students understand real
+            web attack vectors in a controlled environment.
+          </p>
+          <button
+            id="training-labs-hub-btn"
+            class="demo-hub-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="training-labs-grid"
+          >
+            Open Training Labs Hub
+          </button>
+          <div id="training-labs-grid" class="sim-grid labs-hidden">
+            <a
+              class="sim-node"
+              href="https://example.com/lfi-simulator"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-status="CLASSROOM READY"
+              data-hover-status="TARGET ACQUIRED (DEMO)"
+              data-idle-status="CLASSROOM READY"
+            >
+              Open LFI Simulator
+            </a>
+            <a
+              class="sim-node"
+              href="https://example.com/xss-playground"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-status="CLASSROOM READY"
+              data-hover-status="TARGET ACQUIRED (DEMO)"
+              data-idle-status="CLASSROOM READY"
+            >
+              Open Interactive XSS Simulator
+            </a>
+          </div>
+        </div>
+
+        <div class="hud-card project-nodes">
+          <p class="module-label">PROJECT NODES</p>
+          <div class="node-map">
+            <span class="node node-static">Node Alpha</span>
+            <span class="node node-static">Node Beta</span>
+            <span class="node node-static">Node Gamma</span>
+          </div>
+        </div>
+
+        <div class="hud-card arsenal-module">
+          <p class="module-label">AUTOMATION ARSENAL (PYTHON)</p>
+          <div class="under-dev-card">
+            <h3>AUTOMATION ARSENAL — UNDER DEVELOPMENT</h3>
+            <p>
+              Python tools are currently in active build phase and not published
+              yet. This section will be updated after deployment.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
